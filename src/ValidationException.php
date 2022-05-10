@@ -16,7 +16,7 @@ class ValidationException extends RuntimeException
 
     public static function fromErrors(ValidationError ...$errors): self
     {
-        return new self('Validation error', $errors);
+        return new self('Validation error', ...$errors);
     }
 
     /**
