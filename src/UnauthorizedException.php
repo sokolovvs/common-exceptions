@@ -2,12 +2,12 @@
 
 namespace Sokolovvs\CommonExceptions;
 
-use RuntimeException;
+use Throwable;
 
-class UnauthorizedException extends RuntimeException
+class UnauthorizedException extends ImprovedException
 {
-    public function __construct(string $message = "Authorization error")
+    public function __construct(string $message = "Authorization error", array $context = [], Throwable $previous = null)
     {
-        parent::__construct($message);
+        parent::__construct($message, $context, $previous);
     }
 }

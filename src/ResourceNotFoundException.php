@@ -2,12 +2,13 @@
 
 namespace Sokolovvs\CommonExceptions;
 
-use RuntimeException;
+use Throwable;
 
-class ResourceNotFoundException extends RuntimeException
+class ResourceNotFoundException extends ImprovedException
 {
-    public function __construct(string $message = "Resource not found")
+    public function __construct(string $message = "Resource not found", array $context = [], Throwable $previous = null)
     {
-        parent::__construct($message);
+        parent::__construct($message, $context, $previous);
     }
+
 }

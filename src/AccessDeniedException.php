@@ -2,12 +2,13 @@
 
 namespace Sokolovvs\CommonExceptions;
 
-use RuntimeException;
+use Throwable;
 
-class AccessDeniedException extends RuntimeException
+class AccessDeniedException extends ImprovedException
 {
-    public function __construct(string $message = "Access denied")
+    public function __construct(string $message = "Access denied", array $context = [], Throwable $previous = null)
     {
-        parent::__construct($message);
+        parent::__construct($message, $context, $previous);
     }
+
 }

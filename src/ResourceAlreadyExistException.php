@@ -2,12 +2,12 @@
 
 namespace Sokolovvs\CommonExceptions;
 
-use RuntimeException;
+use Throwable;
 
-class ResourceAlreadyExistException extends RuntimeException
+class ResourceAlreadyExistException extends ImprovedException
 {
-    public function __construct(string $message = "Resource already exist")
+    public function __construct(string $message = "Resource already exist", array $context = [], Throwable $previous = null)
     {
-        parent::__construct($message);
+        parent::__construct($message, $context, $previous);
     }
 }

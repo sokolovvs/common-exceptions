@@ -2,21 +2,19 @@
 
 namespace Sokolovvs\CommonExceptions;
 
-use RuntimeException;
-
-class ValidationException extends RuntimeException
+class ValidationException extends ImprovedException
 {
     private $errors;
 
-    public function __construct(string $message = "Validation error", ValidationError ...$errors)
+    public function __construct(string $message = "Validation error", array $context = [], ValidationError ...$errors)
     {
-        parent::__construct($message);
+        parent::__construct($message, $context);
         $this->errors = $errors;
     }
 
     public static function fromErrors(ValidationError ...$errors): self
     {
-        return new self('Validation error', ...$errors);
+        return new self('Validation error', [], ...$errors);
     }
 
     /**
