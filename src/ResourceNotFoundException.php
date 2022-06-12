@@ -10,5 +10,4 @@ class ResourceNotFoundException extends ImprovedException
     {
         parent::__construct($message, $context, $previous);
     }
-
 }

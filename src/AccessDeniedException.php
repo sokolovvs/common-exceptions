@@ -10,5 +10,4 @@ class AccessDeniedException extends ImprovedException
     {
         parent::__construct($message, $context, $previous);
     }
-
 }
